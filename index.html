@@ -101,8 +101,15 @@
   }
 
   /* Tabs */
-  .tabs { border-bottom: 1px solid var(--rule); margin-bottom: 2rem; position: sticky; top: 55px; background: var(--bg); z-index: 5; }
-  .tablist { display: flex; gap: .2rem; overflow-x: auto; scrollbar-width: none; }
+  .tabs { border-bottom: 1px solid var(--rule); margin-bottom: 2rem; position: sticky; top: 55px; background: var(--bg); z-index: 5; position: relative; }
+  .tabs::after {
+    content: ''; position: absolute; top: 0; right: 0; bottom: 1px;
+    width: 2.5rem; pointer-events: none;
+    background: linear-gradient(to right, transparent, var(--bg) 70%);
+    opacity: 0; transition: opacity .2s ease;
+  }
+  .tabs.overflowing::after { opacity: 1; }
+  .tablist { display: flex; gap: .2rem; overflow-x: auto; scrollbar-width: none; scroll-behavior: smooth; }
   .tablist::-webkit-scrollbar { display: none; }
   .tabbtn {
     font-family: var(--sans); font-size: 14px; font-weight: 500;
@@ -112,6 +119,7 @@
     transition: color .15s ease, border-color .15s ease;
     display: inline-flex; align-items: center; gap: .4rem;
   }
+  @media (max-width: 640px) { .tabbtn { padding: .75rem .7rem; font-size: 13.5px; } }
   .tabbtn:hover { color: var(--accent); }
   .tabbtn[aria-selected="true"] { color: var(--accent); border-bottom-color: var(--accent); }
   .tabbtn .pill {
@@ -653,6 +661,18 @@
       const idx = tabs.findIndex(t => t.id === 't-' + initial);
       if (idx >= 0) activate(idx, false);
     }
+
+    // Fade lateral quando há overflow horizontal na lista de abas
+    const tabsWrap = document.querySelector('.tabs');
+    const tablist = document.querySelector('.tablist');
+    function updateOverflow() {
+      const overflowing = tablist.scrollWidth > tablist.clientWidth + 2
+                          && tablist.scrollLeft + tablist.clientWidth < tablist.scrollWidth - 2;
+      tabsWrap.classList.toggle('overflowing', overflowing);
+    }
+    tablist.addEventListener('scroll', updateOverflow, { passive: true });
+    window.addEventListener('resize', updateOverflow);
+    updateOverflow();
   })();
 </script>
 </body>
