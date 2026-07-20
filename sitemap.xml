@@ -16,7 +16,12 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ahenriquecp.com/en/"/>
   </url>
   <url>
-    <loc>https://ahenriquecp.com/assets/cv.pdf</loc>
+    <loc>https://ahenriquecp.com/assets/cv_pt.pdf</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ahenriquecp.com/assets/cv_en.pdf</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
