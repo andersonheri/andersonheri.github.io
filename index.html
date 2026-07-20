@@ -7,6 +7,8 @@
 <meta name="description" content="Anderson Henrique da Silva — pesquisador de pós-doutorado em Ciência Política no CEM/USP. Federalismo, políticas públicas, capacidade estatal, gestão de risco e desastres.">
 <meta name="author" content="Anderson Henrique da Silva">
 <link rel="canonical" href="https://ahenriquecp.com/">
+<link rel="alternate" hreflang="pt-br" href="https://ahenriquecp.com/">
+<link rel="alternate" hreflang="en" href="https://ahenriquecp.com/en/">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%237a1e1e'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='58' font-weight='700' fill='%23fbfaf7' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
 <meta property="og:title" content="Anderson Henrique — Ciência Política">
 <meta property="og:description" content="Pesquisador de pós-doutorado no CEM/USP. Federalismo, capacidade estatal, gestão de risco e desastres.">
@@ -30,89 +32,53 @@
     --mono: "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
   }
   :root[data-theme="dark"] {
-    --bg: #14140f;
-    --bg-elev: #1c1b16;
-    --fg: #ececea;
-    --fg-soft: #c9c7c1;
-    --muted: #8f8b83;
-    --accent: #e0a3a3;
-    --accent-soft: #c98686;
-    --rule: #2e2d28;
-    --card: #1c1b16;
-    --card-shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.4);
+    --bg: #14140f; --bg-elev: #1c1b16; --fg: #ececea; --fg-soft: #c9c7c1;
+    --muted: #8f8b83; --accent: #e0a3a3; --accent-soft: #c98686; --rule: #2e2d28;
+    --card: #1c1b16; --card-shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.4);
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
-      --bg: #14140f;
-      --bg-elev: #1c1b16;
-      --fg: #ececea;
-      --fg-soft: #c9c7c1;
-      --muted: #8f8b83;
-      --accent: #e0a3a3;
-      --accent-soft: #c98686;
-      --rule: #2e2d28;
-      --card: #1c1b16;
-      --card-shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.4);
+      --bg: #14140f; --bg-elev: #1c1b16; --fg: #ececea; --fg-soft: #c9c7c1;
+      --muted: #8f8b83; --accent: #e0a3a3; --accent-soft: #c98686; --rule: #2e2d28;
+      --card: #1c1b16; --card-shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.4);
     }
   }
   * { box-sizing: border-box; }
   html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
   body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--fg);
-    font-family: var(--serif);
-    font-size: 17px;
-    line-height: 1.65;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    margin: 0; background: var(--bg); color: var(--fg);
+    font-family: var(--serif); font-size: 17px; line-height: 1.65;
+    -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
     transition: background .3s ease, color .3s ease;
   }
   a { color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color .15s ease, color .15s ease; }
   a:hover { border-bottom-color: var(--accent); }
   ::selection { background: var(--accent); color: var(--bg); }
 
-  /* Top bar */
   .topbar {
     position: sticky; top: 0; z-index: 10;
     background: color-mix(in srgb, var(--bg) 92%, transparent);
     backdrop-filter: saturate(160%) blur(10px);
     -webkit-backdrop-filter: saturate(160%) blur(10px);
     border-bottom: 1px solid var(--rule);
-    font-family: var(--sans);
-    font-size: 14px;
+    font-family: var(--sans); font-size: 14px;
   }
-  .topbar-inner {
-    max-width: 68rem; margin: 0 auto; padding: .75rem 1.25rem;
-    display: flex; align-items: center; gap: 1rem;
-  }
+  .topbar-inner { max-width: 68rem; margin: 0 auto; padding: .75rem 1.25rem; display: flex; align-items: center; gap: 1rem; }
   .brand { font-family: var(--serif); font-weight: 700; letter-spacing: -.01em; color: var(--fg); border: 0; }
   .nav-spacer { flex: 1; }
-  .navlinks { display: flex; gap: 1.1rem; }
-  .navlinks a { color: var(--fg-soft); border: 0; }
-  .navlinks a:hover { color: var(--accent); }
   .topbtns { display: flex; gap: .5rem; align-items: center; }
   .lang, .themebtn {
-    font-family: var(--sans); font-size: 13px;
-    background: transparent; color: var(--fg-soft);
-    border: 1px solid var(--rule); border-radius: 999px;
-    padding: .3rem .7rem; cursor: pointer;
+    font-family: var(--sans); font-size: 13px; background: transparent; color: var(--fg-soft);
+    border: 1px solid var(--rule); border-radius: 999px; padding: .3rem .7rem; cursor: pointer;
     transition: all .15s ease;
   }
   .lang:hover, .themebtn:hover { border-color: var(--accent); color: var(--accent); }
   .themebtn { padding: .3rem .55rem; line-height: 1; }
-  @media (max-width: 640px) { .navlinks { display: none; } }
 
-  /* Layout */
   .wrap { max-width: 52rem; margin: 0 auto; padding: 3rem 1.25rem 5rem; }
 
-  /* Hero */
-  .hero { display: grid; grid-template-columns: 148px 1fr; gap: 2rem; align-items: center; margin-bottom: 3rem; }
-  .avatar {
-    width: 148px; height: 148px; border-radius: 50%; overflow: hidden;
-    box-shadow: var(--card-shadow); background: var(--bg-elev);
-    border: 3px solid var(--card);
-  }
+  .hero { display: grid; grid-template-columns: 148px 1fr; gap: 2rem; align-items: center; margin-bottom: 2.5rem; }
+  .avatar { width: 148px; height: 148px; border-radius: 50%; overflow: hidden; box-shadow: var(--card-shadow); background: var(--bg-elev); border: 3px solid var(--card); }
   .avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
   .hero h1 { font-size: 2.3rem; margin: 0 0 .35rem; letter-spacing: -.02em; line-height: 1.1; }
   .hero .role { color: var(--muted); margin: 0 0 .9rem; font-style: italic; font-size: 1.05rem; }
@@ -134,18 +100,42 @@
     .hero h1 { font-size: 1.9rem; }
   }
 
-  /* Sections */
-  section { margin-top: 3rem; scroll-margin-top: 4rem; }
+  /* Tabs */
+  .tabs { border-bottom: 1px solid var(--rule); margin-bottom: 2rem; position: sticky; top: 55px; background: var(--bg); z-index: 5; }
+  .tablist { display: flex; gap: .2rem; overflow-x: auto; scrollbar-width: none; }
+  .tablist::-webkit-scrollbar { display: none; }
+  .tabbtn {
+    font-family: var(--sans); font-size: 14px; font-weight: 500;
+    background: transparent; border: 0; padding: .85rem 1rem;
+    color: var(--fg-soft); cursor: pointer; white-space: nowrap;
+    border-bottom: 2px solid transparent; margin-bottom: -1px;
+    transition: color .15s ease, border-color .15s ease;
+    display: inline-flex; align-items: center; gap: .4rem;
+  }
+  .tabbtn:hover { color: var(--accent); }
+  .tabbtn[aria-selected="true"] { color: var(--accent); border-bottom-color: var(--accent); }
+  .tabbtn .pill {
+    background: var(--accent); color: var(--bg);
+    font-size: 10.5px; font-weight: 700; letter-spacing: .06em;
+    padding: .1rem .45rem; border-radius: 999px; text-transform: uppercase;
+  }
+  .tabbtn[aria-selected="true"] .pill { background: var(--accent); }
+  .tabbtn:not([aria-selected="true"]) .pill { background: var(--muted); }
+
+  .tabpanel { display: none; animation: fadein .35s ease; }
+  .tabpanel.active { display: block; }
+  @keyframes fadein { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
   h2 {
     font-family: var(--sans); font-size: .82rem; letter-spacing: .14em;
     text-transform: uppercase; color: var(--accent);
-    margin: 0 0 1rem; padding-bottom: .5rem; border-bottom: 1px solid var(--rule);
+    margin: 2rem 0 1rem; padding-bottom: .5rem; border-bottom: 1px solid var(--rule);
     font-weight: 600;
   }
+  h2:first-child { margin-top: 0; }
   h3 { font-size: 1.05rem; margin: 1.4rem 0 .35rem; letter-spacing: -.005em; }
   p { margin: 0 0 1rem; color: var(--fg-soft); }
 
-  /* Cards */
   .cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: .5rem; }
   .card {
     background: var(--card); border: 1px solid var(--rule); border-radius: 10px;
@@ -156,14 +146,12 @@
   .card p { margin: 0; font-size: .93rem; color: var(--muted); line-height: 1.55; }
   @media (max-width: 640px) { .cards { grid-template-columns: 1fr; } }
 
-  /* Publication list */
   .pubs { list-style: none; padding: 0; margin: 0; counter-reset: pub; }
   .pubs li {
     counter-increment: pub;
     padding: 1rem 0 1rem 2.4rem;
     border-bottom: 1px dashed var(--rule);
-    position: relative;
-    line-height: 1.55;
+    position: relative; line-height: 1.55; font-size: .96rem;
   }
   .pubs li:last-child { border-bottom: 0; }
   .pubs li::before {
@@ -178,36 +166,55 @@
   }
   .venue { font-style: italic; color: var(--fg-soft); }
   .year { color: var(--muted); font-family: var(--sans); font-size: .85rem; }
+  .badge {
+    display: inline-block; font-family: var(--sans); font-size: .7rem; font-weight: 600;
+    letter-spacing: .06em; text-transform: uppercase;
+    background: var(--bg-elev); color: var(--muted);
+    padding: .1rem .5rem; border-radius: 4px; margin-left: .3rem;
+    border: 1px solid var(--rule);
+  }
+  .badge.new { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+  .link-out {
+    font-family: var(--sans); font-size: .78rem; margin-left: .35rem;
+    color: var(--muted); border: 0;
+  }
+  .link-out:hover { color: var(--accent); }
 
-  /* Timeline */
   .timeline { position: relative; padding-left: 1.6rem; }
-  .timeline::before {
-    content: ''; position: absolute; left: .5rem; top: .5rem; bottom: .5rem;
-    width: 2px; background: var(--rule);
-  }
+  .timeline::before { content: ''; position: absolute; left: .5rem; top: .5rem; bottom: .5rem; width: 2px; background: var(--rule); }
   .tl-item { position: relative; padding: .5rem 0 1.1rem; }
-  .tl-item::before {
-    content: ''; position: absolute; left: -1.42rem; top: .95rem;
-    width: 10px; height: 10px; border-radius: 50%;
-    background: var(--accent); box-shadow: 0 0 0 3px var(--bg);
-  }
-  .tl-item .when {
-    font-family: var(--sans); font-size: .8rem; letter-spacing: .04em;
-    color: var(--muted); text-transform: uppercase; font-weight: 600;
-  }
+  .tl-item::before { content: ''; position: absolute; left: -1.42rem; top: .95rem; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 3px var(--bg); }
+  .tl-item .when { font-family: var(--sans); font-size: .8rem; letter-spacing: .04em; color: var(--muted); text-transform: uppercase; font-weight: 600; }
   .tl-item h3 { margin: .15rem 0 .2rem; }
   .tl-item p { margin: 0; font-size: .95rem; }
 
-  /* Tags */
   .tags { display: flex; flex-wrap: wrap; gap: .4rem; margin: .6rem 0 1.2rem; }
-  .tag {
-    font-family: var(--sans); font-size: .78rem;
-    padding: .25rem .65rem; border-radius: 999px;
-    background: var(--bg-elev); color: var(--fg-soft);
+  .tag { font-family: var(--sans); font-size: .78rem; padding: .25rem .65rem; border-radius: 999px; background: var(--bg-elev); color: var(--fg-soft); border: 1px solid var(--rule); }
+
+  /* News feed */
+  .news { display: flex; flex-direction: column; gap: 1rem; margin-top: .5rem; }
+  .news-item {
+    display: grid; grid-template-columns: 6.5rem 1fr; gap: 1rem;
+    padding: 1rem 1.2rem; background: var(--card); border: 1px solid var(--rule); border-radius: 10px;
+    align-items: baseline;
+  }
+  .news-item .date {
+    font-family: var(--sans); font-size: .8rem; letter-spacing: .04em;
+    color: var(--muted); text-transform: uppercase; font-weight: 600;
+    padding-top: .1rem;
+  }
+  .news-item .tag-inline {
+    display: inline-block; font-family: var(--sans); font-size: .7rem; font-weight: 700;
+    letter-spacing: .08em; text-transform: uppercase; padding: .12rem .5rem;
+    border-radius: 4px; margin-right: .5rem; background: var(--bg-elev); color: var(--accent);
     border: 1px solid var(--rule);
   }
+  .news-item .headline { font-family: var(--serif); font-size: 1.02rem; line-height: 1.4; color: var(--fg); }
+  .news-item .body { font-size: .92rem; color: var(--muted); margin-top: .35rem; line-height: 1.55; }
+  @media (max-width: 640px) {
+    .news-item { grid-template-columns: 1fr; gap: .35rem; }
+  }
 
-  /* Contact */
   .contact-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: .6rem 1.5rem; margin-top: .5rem; }
   .contact-grid dt { font-family: var(--sans); font-size: .78rem; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; margin-top: .3rem; }
   .contact-grid dd { margin: 0 0 .5rem; }
@@ -218,14 +225,6 @@
     color: var(--muted); font-size: .82rem; font-family: var(--sans);
     display: flex; justify-content: space-between; flex-wrap: wrap; gap: .5rem;
   }
-
-  /* Fade-in on scroll */
-  @media (prefers-reduced-motion: no-preference) {
-    section { opacity: 0; transform: translateY(12px); transition: opacity .5s ease, transform .5s ease; }
-    section.in { opacity: 1; transform: none; }
-    .hero { opacity: 0; transform: translateY(8px); animation: heroin .7s ease .1s forwards; }
-    @keyframes heroin { to { opacity: 1; transform: none; } }
-  }
 </style>
 </head>
 <body>
@@ -233,13 +232,6 @@
 <div class="topbar">
   <div class="topbar-inner">
     <a href="#" class="brand">Anderson Henrique</a>
-    <nav class="navlinks" aria-label="seções">
-      <a href="#sobre">Sobre</a>
-      <a href="#pesquisa">Pesquisa</a>
-      <a href="#publicacoes">Publicações</a>
-      <a href="#docencia">Docência</a>
-      <a href="#contato">Contato</a>
-    </nav>
     <span class="nav-spacer"></span>
     <div class="topbtns">
       <a class="lang" href="/en/" title="English version">EN</a>
@@ -264,8 +256,20 @@
     </div>
   </header>
 
-  <section id="sobre">
-    <h2>Sobre</h2>
+  <div class="tabs">
+    <div class="tablist" role="tablist" aria-label="Seções">
+      <button class="tabbtn" role="tab" aria-selected="true" aria-controls="tab-sobre" id="t-sobre">Sobre</button>
+      <button class="tabbtn" role="tab" aria-selected="false" aria-controls="tab-novidades" id="t-novidades">Novidades <span class="pill">novo</span></button>
+      <button class="tabbtn" role="tab" aria-selected="false" aria-controls="tab-pesquisa" id="t-pesquisa">Pesquisa</button>
+      <button class="tabbtn" role="tab" aria-selected="false" aria-controls="tab-publicacoes" id="t-publicacoes">Publicações</button>
+      <button class="tabbtn" role="tab" aria-selected="false" aria-controls="tab-trajetoria" id="t-trajetoria">Trajetória</button>
+      <button class="tabbtn" role="tab" aria-selected="false" aria-controls="tab-docencia" id="t-docencia">Docência</button>
+      <button class="tabbtn" role="tab" aria-selected="false" aria-controls="tab-contato" id="t-contato">Contato</button>
+    </div>
+  </div>
+
+  <!-- SOBRE -->
+  <section class="tabpanel active" id="tab-sobre" role="tabpanel" aria-labelledby="t-sobre">
     <p>Pesquisador de pós-doutorado vinculado ao <a href="https://centrodametropole.fflch.usp.br/" target="_blank" rel="noopener">Centro de Estudos da Metrópole (CEM)</a> — FAPESP/Cepid/USP, sob supervisão da Profa. Ursula Peres (EACH/USP). Doutor em Ciência Política pela Universidade Federal de Pernambuco (UFPE, 2025), com mestrado e graduação pela mesma instituição e período sanduíche em Relações Internacionais na Universidade de Coimbra (2016).</p>
     <p>Foi professor substituto de Ciência Política na Universidade Federal do Vale do São Francisco (UNIVASF, 2022–2024) e professor colaborador do ProfSocio/UNIVASF (2023–2025). Atualmente é pesquisador-convidado no projeto <em>Transferências Intergovernamentais e Federalismo Brasileiro</em>, no IPEA (Brasília).</p>
     <div class="tags" aria-label="áreas de interesse">
@@ -278,8 +282,79 @@
     </div>
   </section>
 
-  <section id="pesquisa">
-    <h2>Pesquisa</h2>
+  <!-- NOVIDADES -->
+  <section class="tabpanel" id="tab-novidades" role="tabpanel" aria-labelledby="t-novidades">
+    <p>Últimas atualizações, publicações a caminho e conquistas recentes.</p>
+    <div class="news">
+
+      <article class="news-item">
+        <div class="date">2026</div>
+        <div>
+          <span class="tag-inline">Software</span>
+          <span class="headline">Lançamento do pacote <strong>acR</strong> para R.</span>
+          <div class="body">Pacote em desenvolvimento para análise em Ciência Política em R. Código-fonte no <a href="https://github.com/andersonheri" target="_blank" rel="noopener">meu GitHub</a>.</div>
+        </div>
+      </article>
+
+      <article class="news-item">
+        <div class="date">2026</div>
+        <div>
+          <span class="tag-inline">Aprovação</span>
+          <span class="headline">Aprovação em concurso para professor efetivo na <strong>UNIRIO</strong>.</span>
+          <div class="body">3º lugar geral e 1º lugar nas vagas PPPIQ do concurso em Ciência Política — área de Estado e Governo (foco em Desenho de Pesquisa), Edital 13/2026.</div>
+        </div>
+      </article>
+
+      <article class="news-item">
+        <div class="date">2026</div>
+        <div>
+          <span class="tag-inline">No prelo</span>
+          <span class="headline">Artigo aceito na <em>Revista Brasileira de Ciências Sociais</em>.</span>
+          <div class="body">Batista, M.; <strong>Henrique, A.</strong>; Porto, L. <em>Investimento ou aprendizado? Incentivos da reeleição sobre a promoção de capacidades estatais nos municípios brasileiros.</em></div>
+        </div>
+      </article>
+
+      <article class="news-item">
+        <div class="date">2026</div>
+        <div>
+          <span class="tag-inline">No prelo</span>
+          <span class="headline">Texto para Discussão do <strong>IPEA</strong> aceito.</span>
+          <div class="body">Palotti, P. L. M.; Linhares, P. T. F.; <strong>Henrique, A.</strong> <em>Capacidades estatais municipais e o desempenho na gestão de transferências intergovernamentais da União: lições para o federalismo fiscal brasileiro.</em></div>
+        </div>
+      </article>
+
+      <article class="news-item">
+        <div class="date">2026</div>
+        <div>
+          <span class="tag-inline">Capítulo</span>
+          <span class="headline">Dois capítulos publicados em <em>Reformar o Estado: o que fazer?</em> (Jacarta/ENAP).</span>
+          <div class="body">Coautoria com Mariana Batista, Leonardo Porto e Pedro Palotti (Cap. sobre capacidade estatal) e com Luiz Antônio Soares (Cap. sobre governança do imprevisto).</div>
+        </div>
+      </article>
+
+      <article class="news-item">
+        <div class="date">2025</div>
+        <div>
+          <span class="tag-inline">Doutorado</span>
+          <span class="headline">Tese defendida e <strong>recomendada para premiação</strong> pela banca no PPGCP/UFPE.</span>
+          <div class="body"><em>Missão: Imprevisto — Governança, Capacidades Estatais e Desempenho Municipal na Gestão de Risco e Desastres no Brasil.</em> Orientação de Dalson Britto Figueiredo Filho. <a href="https://repositorio.ufpe.br/handle/123456789/64483" target="_blank" rel="noopener">Ler no RI/UFPE ↗</a></div>
+        </div>
+      </article>
+
+      <article class="news-item">
+        <div class="date">2025</div>
+        <div>
+          <span class="tag-inline">Pós-doc</span>
+          <span class="headline">Início do pós-doutorado no <strong>CEM/USP</strong> com bolsa FAPESP.</span>
+          <div class="body">Projeto <em>Entre Alertas e Abandono: Diagnosticando o Desempenho Municipal na Gestão de Riscos e Desastres Naturais nas Capitais Brasileiras</em> (proc. 2025/15250-0), supervisão de Ursula Peres (EACH/USP).</div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- PESQUISA -->
+  <section class="tabpanel" id="tab-pesquisa" role="tabpanel" aria-labelledby="t-pesquisa">
     <div class="cards">
       <div class="card">
         <h3>Projeto atual — FAPESP</h3>
@@ -287,7 +362,11 @@
       </div>
       <div class="card">
         <h3>Tese de doutorado</h3>
-        <p><em>Missão: Imprevisto — Governança, Capacidades Estatais e Desempenho Municipal na Gestão de Risco e Desastres no Brasil.</em> UFPE, 2025. Recomendada para premiação pela banca.</p>
+        <p><em>Missão: Imprevisto — Governança, Capacidades Estatais e Desempenho Municipal na Gestão de Risco e Desastres no Brasil.</em> UFPE, 2025. Recomendada para premiação pela banca. <a href="https://repositorio.ufpe.br/handle/123456789/64483" target="_blank" rel="noopener">RI/UFPE ↗</a></p>
+      </div>
+      <div class="card">
+        <h3>Dissertação</h3>
+        <p><em>Desastres naturais, recursos federais de emergência e eleições municipais no Brasil (2012): evidências de um estudo de caso.</em> UFPE, 2021. Orientação de Gabriela Tarouco.</p>
       </div>
       <div class="card">
         <h3>Linhas de pesquisa</h3>
@@ -297,75 +376,187 @@
         <h3>Grupos e redes</h3>
         <p>CEM/USP · INCT-QualiGov · Instituições, Governo e Políticas Públicas (DCP/UFPE) · Polikt/UNIVASF · Consórcio Crise e Política Local (UFABC/UFPR/UFPE).</p>
       </div>
+      <div class="card">
+        <h3>Pacote R — <strong>acR</strong></h3>
+        <p>Pacote em desenvolvimento para análise em Ciência Política. <a href="https://github.com/andersonheri" target="_blank" rel="noopener">Repositório ↗</a></p>
+      </div>
     </div>
   </section>
 
-  <section id="trajetoria">
-    <h2>Trajetória</h2>
+  <!-- PUBLICAÇÕES -->
+  <section class="tabpanel" id="tab-publicacoes" role="tabpanel" aria-labelledby="t-publicacoes">
+
+    <h2>Artigos no prelo</h2>
+    <ol class="pubs">
+      <li>
+        Batista, M.; <strong>Henrique, A.</strong>; Porto, L. Investimento ou aprendizado? Incentivos da reeleição sobre a promoção de capacidades estatais nos municípios brasileiros. <span class="venue">Revista Brasileira de Ciências Sociais</span>. <span class="year">2026</span>. <span class="badge new">no prelo</span>
+      </li>
+      <li>
+        Palotti, P. L. M.; Linhares, P. T. F.; <strong>Henrique, A.</strong> Capacidades estatais municipais e o desempenho na gestão de transferências intergovernamentais da União: lições para o federalismo fiscal brasileiro. <span class="venue">Texto para Discussão (IPEA)</span>. <span class="year">2026</span>. <span class="badge new">no prelo</span>
+      </li>
+    </ol>
+
+    <h2>Capítulos de livros</h2>
+    <ol class="pubs">
+      <li>
+        <strong>Henrique, A.</strong>; Batista, M.; Porto, L.; Palotti, P. L. M. O Estado em números: construindo bons índices e interpretações de capacidade estatal. In: Gomide, A.; Marenco, A.; Oliveira, V. E. (Orgs.), <span class="venue">Reformar o Estado: o que fazer?</span>. Porto Alegre: Jacarta/ENAP, <span class="year">2026</span>, p. 224–238.
+      </li>
+      <li>
+        <strong>Henrique, A.</strong>; Soares, L. A. C. Governança do imprevisto: indicadores, diagnósticos e janelas de oportunidade na gestão de risco e desastres. In: Gomide, A.; Marenco, A.; Oliveira, V. E. (Orgs.), <span class="venue">Reformar o Estado: o que fazer?</span>. Porto Alegre: Jacarta/ENAP, <span class="year">2026</span>, p. 312–329.
+      </li>
+      <li>
+        <strong>Henrique, A.</strong>; Braga, D. D. A. Programa Brasil Alfabetizado: uma avaliação da teoria do programa. In: Nascimento, P.; Barros, A. T. D. L. (Orgs.), <span class="venue">Ciência Política: uma proposta educativa — Políticas públicas, v. 2</span>. Campina Grande: Eduepb, <span class="year">2023</span>, p. 139–159.
+      </li>
+      <li>
+        Silva, A. H.; Batista, M. A politização dos desastres naturais: alinhamento partidário e a alocação de recursos federais de emergência para os municípios no Brasil. In: <span class="venue">IV Simpósio de Direito Eleitoral do Nordeste</span>. Campina Grande: Abradep, <span class="year">2022</span>, p. 417–446.
+      </li>
+    </ol>
+
+    <h2>Artigos em periódicos</h2>
+    <ol class="pubs">
+      <li>
+        <strong>Henrique, A.</strong>; Batista, M. Politização dos desastres naturais: alinhamento partidário, declarações de emergência e a alocação de recursos federais para os municípios no Brasil. <span class="venue">Opinião Pública</span>, 26, 522–555, <span class="year">2020</span>. <a class="link-out" href="https://www.scielo.br/j/op/a/dBytWtzrvYYVGY656TzzVDp/" target="_blank" rel="noopener">SciELO ↗</a>
+      </li>
+      <li>
+        Ferreira, D. R. F.; <strong>Henrique, A.</strong>; Cavalcanti, D. B.; Melo, J. M. F. O. Perfil sociopedagógico municipal: um estudo de caso dos professores em Gravatá (PE). <span class="venue">Revista de Administração Educacional</span>, 11, 49–74, <span class="year">2020</span>.
+      </li>
+      <li>
+        Barros, A. T.; Busanello, E.; <strong>Henrique, A.</strong>; Fernandes, A. A. T. Representação política feminina sob a ótica das eleitoras brasileiras. <span class="venue">Século XXI — Revista de Ciências Sociais</span>, 10, 263–300, <span class="year">2020</span>.
+      </li>
+      <li>
+        Assis, A. C. O.; <strong>Henrique, A.</strong>; Bittencourt, N. V.; Lima, K. G. C. Mapeando os ataques no espaço cibernético: análise descritiva dos principais atores e tendências (2006–2019). <span class="venue">Política Hoje</span>, 29, 212–234, <span class="year">2020</span>.
+      </li>
+      <li>
+        <strong>Henrique, A.</strong>; Braga, D. D. A. Programa Brasil Alfabetizado: uma avaliação da teoria do programa. <span class="venue">Espaço Público</span>, 9, 10–29, <span class="year">2019</span>. <a class="link-out" href="https://periodicos.ufpe.br/revistas/politicaspublicas/article/view/242896" target="_blank" rel="noopener">Periódicos UFPE ↗</a>
+      </li>
+      <li>
+        <strong>Henrique, A.</strong> Percepção macroeconômica, felicidade e ideologia: um estudo de caso do Brasil (2010–2016). <span class="venue">Revista Eletrônica de Ciência Política — RECP</span>, 11, 132–153, <span class="year">2019</span>. <a class="link-out" href="https://revistas.ufpr.br/politica/article/view/70099" target="_blank" rel="noopener">RECP ↗</a>
+      </li>
+      <li>
+        Ferreira, D. R. F.; <strong>Henrique, A.</strong> O mapa das parcerias público-privadas em saneamento no Brasil: uma análise comparada (2006–2017). <span class="venue">Polis (Santiago)</span>, 17, 275–293, <span class="year">2018</span>. <a class="link-out" href="https://journals.openedition.org/polis/15972" target="_blank" rel="noopener">OpenEdition ↗</a>
+      </li>
+      <li>
+        <strong>Henrique, A.</strong>; Fernandes, A. A. T.; Nascimento, W. S. Desigualdade, desenvolvimento humano e corrupção nos estados brasileiros. <span class="venue">Em Tese (Florianópolis)</span>, 13, 167–188, <span class="year">2016</span>. <a class="link-out" href="https://www.academia.edu/30356420/" target="_blank" rel="noopener">Texto ↗</a>
+      </li>
+      <li>
+        Silva, L. E. O.; Torres, M. V. S.; <strong>Henrique, A.</strong>; Stainer, A. Q. As democracias e as ondas ambientais: evidências de um estudo empírico. <span class="venue">Teoria &amp; Sociedade (UFMG)</span>, 24, 25–42, <span class="year">2016</span>.
+      </li>
+      <li>
+        Dofonnou, N. B.; <strong>Henrique, A.</strong>; Stainer, A. Q. Os acordos firmados no continente africano e sua relação com os processos de integração regional: o caso da União Africana. <span class="venue">Política Hoje</span>, 25, 133–159, <span class="year">2016</span>.
+      </li>
+      <li>
+        Figueiredo Filho, D. B.; Rocha, E. C.; Paranhos, R.; Silva Jr., J. A.; <strong>Henrique, A.</strong>; Silva, D. P. A.; Silva, L. E. O. Análise fatorial garantida ou o seu dinheiro de volta: uma introdução à redução de dados. <span class="venue">RECP</span>, 5, 185–211, <span class="year">2014</span>.
+      </li>
+    </ol>
+
+    <h2>Teses e dissertações</h2>
+    <ol class="pubs">
+      <li>
+        <strong>Silva, A. H.</strong> <em>Missão: Imprevisto — Governança, Capacidades Estatais e Desempenho Municipal na Gestão de Risco e Desastres no Brasil.</em> Tese (Doutorado em Ciência Política) — UFPE, <span class="year">2025</span>. Orientação: Dalson Britto Figueiredo Filho. Recomendada para premiação pela banca. <a class="link-out" href="https://repositorio.ufpe.br/handle/123456789/64483" target="_blank" rel="noopener">RI/UFPE ↗</a>
+      </li>
+      <li>
+        <strong>Silva, A. H.</strong> <em>Desastres naturais, recursos federais de emergência e eleições municipais no Brasil (2012): evidências de um estudo de caso.</em> Dissertação (Mestrado em Ciência Política) — UFPE, <span class="year">2021</span>. Orientação: Gabriela da Silva Tarouco. Coorientação: Davi Cordeiro Moreira. <a class="link-out" href="https://repositorio.ufpe.br/handle/123456789/245" target="_blank" rel="noopener">RI/UFPE (coleção) ↗</a>
+      </li>
+      <li>
+        <strong>Silva, A. H.</strong> <em>'As águas de janeiro valem dinheiro!' O efeito do alinhamento político nas Transferências Federais de Emergência no Brasil (2009–2015).</em> Monografia (Graduação em Ciência Política) — UFPE, <span class="year">2018</span>. Orientação: Mariana Batista da Silva.
+      </li>
+    </ol>
+
+    <p style="margin-top: 1.5rem; font-size: .93rem;">Lista completa e atualizada: <a href="assets/cv.pdf" download>CV em PDF</a> · <a href="http://lattes.cnpq.br/7628365040600511" target="_blank" rel="noopener">Lattes</a> · <a href="https://orcid.org/0000-0002-1842-2725" target="_blank" rel="noopener">ORCID</a>.</p>
+  </section>
+
+  <!-- TRAJETÓRIA -->
+  <section class="tabpanel" id="tab-trajetoria" role="tabpanel" aria-labelledby="t-trajetoria">
     <div class="timeline">
       <div class="tl-item">
         <div class="when">2025 – hoje</div>
         <h3>Pós-doutorado — CEM/USP</h3>
-        <p>Bolsa FAPESP, supervisão de Ursula Peres (EACH/USP).</p>
+        <p>Bolsa FAPESP (proc. 2025/15250-0). Supervisão de Ursula Peres (EACH/USP).</p>
       </div>
       <div class="tl-item">
         <div class="when">2024 – hoje</div>
         <h3>IPEA — Brasília</h3>
-        <p>Pesquisador-convidado (2025–) e assistente de pesquisa (2024–2025) no projeto sobre transferências intergovernamentais.</p>
+        <p>Pesquisador-convidado (2025–) e assistente de pesquisa (2024–2025) no projeto sobre transferências intergovernamentais no federalismo brasileiro (PNPD).</p>
+      </div>
+      <div class="tl-item">
+        <div class="when">2023 – 2025</div>
+        <h3>Professor colaborador — UNIVASF</h3>
+        <p>Mestrado Profissional de Sociologia em Rede Nacional (ProfSocio). Metodologia de Pesquisa e MEDIALIT.</p>
       </div>
       <div class="tl-item">
         <div class="when">2022 – 2024</div>
         <h3>Professor substituto — UNIVASF</h3>
-        <p>Ciências Sociais, Juazeiro/BA. Métodos, políticas públicas, teoria política e sociologia.</p>
+        <p>Ciências Sociais, Juazeiro/BA. Métodos, políticas públicas, teoria política e sociologia (também nas engenharias).</p>
       </div>
       <div class="tl-item">
         <div class="when">2021 – 2025</div>
-        <h3>Doutorado — UFPE</h3>
-        <p>Ciência Política, bolsa FACEPE, orientação de Dalson Britto Figueiredo Filho.</p>
+        <h3>Doutorado em Ciência Política — UFPE</h3>
+        <p>Bolsa FACEPE. Orientação de Dalson Britto Figueiredo Filho. Tese recomendada para premiação pela banca.</p>
+      </div>
+      <div class="tl-item">
+        <div class="when">2019 – 2021</div>
+        <h3>Mestrado em Ciência Política — UFPE</h3>
+        <p>Bolsa FACEPE. Orientação de Gabriela da Silva Tarouco, coorientação de Davi Cordeiro Moreira. Dissertação sobre desastres naturais, recursos federais de emergência e eleições municipais.</p>
+      </div>
+      <div class="tl-item">
+        <div class="when">2019</div>
+        <h3>Survey Data Analysis — University of Essex</h3>
+        <p>Curso de 200h no âmbito do Essex Summer School / Global South Academic Network (bolsa).</p>
       </div>
       <div class="tl-item">
         <div class="when">2016</div>
         <h3>Sanduíche — Universidade de Coimbra</h3>
-        <p>Relações Internacionais, orientação de Carmen Amado Mendes.</p>
+        <p>Relações Internacionais. Orientação de Carmen Amado Mendes. Bolsa Santander Ibero-Americanas.</p>
+      </div>
+      <div class="tl-item">
+        <div class="when">2014 – 2018</div>
+        <h3>Graduação em Ciência Política — UFPE</h3>
+        <p>Bolsa CNPq (PIBIC, 2014–2017). Orientação de Mariana Batista da Silva. Bolsista PET/MEC (2014–2015). Monitor de Métodos Quantitativos e Teoria Política.</p>
       </div>
     </div>
   </section>
 
-  <section id="publicacoes">
-    <h2>Publicações selecionadas</h2>
-    <ol class="pubs">
-      <li>Batista, M.; <strong>Henrique, A.</strong>; Porto, L. (<span class="year">2026, no prelo</span>). Investimento ou aprendizado? Incentivos da reeleição sobre a promoção de capacidades estatais nos municípios brasileiros. <span class="venue">Revista Brasileira de Ciências Sociais</span>.</li>
-      <li><strong>Henrique, A.</strong>; Batista, M. (<span class="year">2020</span>). Politização dos desastres naturais: alinhamento partidário, declarações de emergência e a alocação de recursos federais para os municípios no Brasil. <span class="venue">Opinião Pública</span>, 26, 522–555.</li>
-      <li><strong>Henrique, A.</strong> (<span class="year">2019</span>). Percepção macroeconômica, felicidade e ideologia: um estudo de caso do Brasil (2010–2016). <span class="venue">Revista Eletrônica de Ciência Política — RECP</span>, 11, 132–153.</li>
-      <li><strong>Henrique, A.</strong>; Braga, D. D. A. (<span class="year">2019</span>). Programa Brasil Alfabetizado: uma avaliação da teoria do programa. <span class="venue">Espaço Público</span>, 9, 10–29.</li>
-      <li>Ferreira, D. R. F.; <strong>Henrique, A.</strong> (<span class="year">2018</span>). O mapa das parcerias público-privadas em saneamento no Brasil: uma análise comparada (2006–2017). <span class="venue">Polis (Santiago)</span>, 17, 275–293.</li>
-      <li><strong>Henrique, A.</strong>; Fernandes, A. A. T.; Nascimento, W. S. (<span class="year">2016</span>). Desigualdade, desenvolvimento humano e corrupção nos estados brasileiros. <span class="venue">Em Tese (Florianópolis)</span>, 13, 167–188.</li>
-    </ol>
-    <p style="margin-top: 1.2rem; font-size: .93rem;">Lista completa: <a href="assets/cv.pdf" download>CV em PDF</a> · <a href="http://lattes.cnpq.br/7628365040600511" target="_blank" rel="noopener">Lattes</a> · <a href="https://orcid.org/0000-0002-1842-2725" target="_blank" rel="noopener">ORCID</a>.</p>
-  </section>
+  <!-- DOCÊNCIA -->
+  <section class="tabpanel" id="tab-docencia" role="tabpanel" aria-labelledby="t-docencia">
+    <h2>Pós-graduação — ProfSocio/UNIVASF</h2>
+    <div class="tags">
+      <span class="tag">Metodologia de Pesquisa</span>
+      <span class="tag">MEDIALIT: Letramento para Mídias Digitais</span>
+    </div>
 
-  <section id="docencia">
-    <h2>Docência</h2>
-    <p>Disciplinas ministradas na graduação em Ciências Sociais e pós-graduação (UNIVASF, 2022–2025):</p>
+    <h2>Graduação — UNIVASF (Ciências Sociais e Engenharias)</h2>
     <div class="tags">
       <span class="tag">Métodos Quantitativos</span>
       <span class="tag">Métodos Qualiquantitativos</span>
-      <span class="tag">Metodologia de Pesquisa</span>
       <span class="tag">Políticas Públicas</span>
       <span class="tag">Teoria Política I e III</span>
       <span class="tag">Federalismo e Poder Local</span>
-      <span class="tag">Sociologia (Engenharias)</span>
+      <span class="tag">Introdução aos Trabalhos Científicos</span>
+      <span class="tag">Sociologia (Eng. Civil, Produção, Mecânica)</span>
       <span class="tag">Bases Sociológicas da Psicologia</span>
+      <span class="tag">Fundamentos de Antropologia e Sociologia</span>
+    </div>
+
+    <h2>Estágio docência — UFPE</h2>
+    <div class="tags">
+      <span class="tag">Políticas Públicas I</span>
+      <span class="tag">Seminário de Pesquisa</span>
+      <span class="tag">Instituições Políticas I</span>
+      <span class="tag">Antropologia</span>
+      <span class="tag">Métodos Quantitativos I</span>
+      <span class="tag">Teoria Política I</span>
     </div>
   </section>
 
-  <section id="contato">
-    <h2>Contato</h2>
+  <!-- CONTATO -->
+  <section class="tabpanel" id="tab-contato" role="tabpanel" aria-labelledby="t-contato">
     <dl class="contact-grid">
       <dt>E-mail</dt><dd><a href="mailto:andersonheri@gmail.com">andersonheri@gmail.com</a></dd>
       <dt>ORCID</dt><dd><a href="https://orcid.org/0000-0002-1842-2725" target="_blank" rel="noopener">0000-0002-1842-2725</a></dd>
       <dt>Lattes</dt><dd><a href="http://lattes.cnpq.br/7628365040600511" target="_blank" rel="noopener">7628365040600511</a></dd>
       <dt>GitHub</dt><dd><a href="https://github.com/andersonheri" target="_blank" rel="noopener">github.com/andersonheri</a></dd>
+      <dt>Endereço</dt><dd>Centro de Estudos da Metrópole — CEM/USP · São Paulo, SP</dd>
+      <dt>CV</dt><dd><a href="assets/cv.pdf" download>Baixar CV em PDF</a></dd>
     </dl>
   </section>
 
@@ -384,8 +575,7 @@
     const saved = localStorage.getItem(KEY);
     if (saved === 'light' || saved === 'dark') root.setAttribute('data-theme', saved);
     function current() {
-      return root.getAttribute('data-theme')
-          || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      return root.getAttribute('data-theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
     }
     function icon() { btn.textContent = current() === 'dark' ? '☀' : '☾'; }
     icon();
@@ -397,16 +587,46 @@
     });
   })();
 
-  // Fade-in on scroll
+  // Tabs (com hash routing e navegação por teclado)
   (function () {
-    if (!('IntersectionObserver' in window)) {
-      document.querySelectorAll('section').forEach(s => s.classList.add('in'));
-      return;
+    const tabs = Array.from(document.querySelectorAll('.tabbtn'));
+    const panels = tabs.map(t => document.getElementById(t.getAttribute('aria-controls')));
+
+    function activate(idx, pushHash) {
+      tabs.forEach((t, i) => {
+        const sel = i === idx;
+        t.setAttribute('aria-selected', sel ? 'true' : 'false');
+        t.tabIndex = sel ? 0 : -1;
+        panels[i].classList.toggle('active', sel);
+      });
+      if (pushHash) {
+        const id = tabs[idx].id.replace(/^t-/, '');
+        history.replaceState(null, '', '#' + id);
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-    }, { threshold: 0.08 });
-    document.querySelectorAll('section').forEach(s => io.observe(s));
+
+    tabs.forEach((t, i) => {
+      t.addEventListener('click', () => activate(i, true));
+      t.addEventListener('keydown', (e) => {
+        let ni = i;
+        if (e.key === 'ArrowRight') ni = (i + 1) % tabs.length;
+        else if (e.key === 'ArrowLeft') ni = (i - 1 + tabs.length) % tabs.length;
+        else if (e.key === 'Home') ni = 0;
+        else if (e.key === 'End') ni = tabs.length - 1;
+        else return;
+        e.preventDefault();
+        tabs[ni].focus();
+        activate(ni, true);
+      });
+    });
+
+    // Open tab from hash on load
+    const initial = location.hash.replace(/^#/, '');
+    if (initial) {
+      const idx = tabs.findIndex(t => t.id === 't-' + initial);
+      if (idx >= 0) activate(idx, false);
+    }
   })();
 </script>
 </body>
