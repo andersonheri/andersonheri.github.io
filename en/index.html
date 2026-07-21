@@ -158,7 +158,7 @@
 
   <div class="tabs">
     <div class="tablist" role="tablist" aria-label="Sections">
-      <button class="tabbtn" role="tab" aria-selected="true" aria-controls="tab-about" id="t-about">About</button>
+      <button class="tabbtn" role="tab" aria-selected="true" aria-controls="tab-about" id="t-about">Home</button>
       <button class="tabbtn" role="tab" aria-selected="false" aria-controls="tab-news" id="t-news">News</button>
       <button class="tabbtn" role="tab" aria-selected="false" aria-controls="tab-research" id="t-research">Research</button>
       <button class="tabbtn" role="tab" aria-selected="false" aria-controls="tab-publications" id="t-publications">Publications</button>
@@ -170,6 +170,24 @@
   </div>
 
   <section class="tabpanel active" id="tab-about" role="tabpanel" aria-labelledby="t-about">
+    <p style="font-size: 1.1rem; margin-bottom: .6rem;"><strong>Welcome.</strong> Here you will find my research, publications, CV, replication data and teaching materials.</p>
+
+    <div class="cards" style="margin-bottom: 2rem;">
+      <div class="card">
+        <h3><strong>acR</strong> package</h3>
+        <p>An R package for Political Science analysis.<br><a href="https://github.com/andersonheri/acR" target="_blank" rel="noopener">See on GitHub ↗</a></p>
+      </div>
+      <div class="card">
+        <h3>FAPESP project</h3>
+        <p>New postdoctoral project at CEM/USP on disaster risk management in Brazilian capitals.<br><a href="#research" data-tab="research">See details →</a></p>
+      </div>
+      <div class="card">
+        <h3>Forthcoming</h3>
+        <p>Two articles accepted in 2026 — RBCS and IPEA discussion paper.<br><a href="#publications" data-tab="publications">See publications →</a></p>
+      </div>
+    </div>
+
+    <h2>About</h2>
     <p>I am a political scientist, holding a Ph.D. from the Federal University of Pernambuco (UFPE, 2025), and currently a postdoctoral research fellow at the <a href="https://centrodametropole.fflch.usp.br/" target="_blank" rel="noopener">Center for the Study of the Metropolis (CEM)</a> — FAPESP/Cepid/USP, supervised by Prof. Ursula Peres (EACH/USP). I am also a member of the <a href="https://www.qualigov.pro.br/" target="_blank" rel="noopener">National Institute of Science and Technology on Quality of Government and Policies for Sustainable Development (INCT-QualiGov)</a> and an invited researcher at the Institute for Applied Economic Research (IPEA, Brasília), in the project <em>Intergovernmental Transfers and Brazilian Federalism</em>.</p>
     <p>My work investigates <strong>how the Brazilian state responds to the unforeseen</strong> — in particular, who receives federal emergency resources, when, and why. I use this question as a thread to examine federalism, state capacity and the politics of intergovernmental transfers at the municipal level, combining quantitative designs with qualitative evidence. I also write on public policy (implementation and evaluation) and on replicability and research methods in Political Science.</p>
     <p>Before my postdoctoral fellowship, I was a substitute professor of Political Science at the Federal University of the São Francisco Valley (UNIVASF, 2022–2024) and a collaborating professor in the Professional Master in Sociology in National Network (ProfSocio/UNIVASF, 2023–2025). My training includes an M.A. and B.A. at UFPE, an exchange program in International Relations at the University of Coimbra (2016), and courses in <em>Survey Data Analysis</em> at the University of Essex (2019) and <em>Research Transparency and Reproducibility</em> at UC Berkeley (2024).</p>
@@ -537,6 +555,12 @@
       const idx = tabs.findIndex(t => t.id === 't-' + initial);
       if (idx >= 0) activate(idx, false);
     }
+    document.querySelectorAll('a[data-tab]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        const idx = tabs.findIndex(t => t.id === 't-' + a.dataset.tab);
+        if (idx >= 0) { e.preventDefault(); activate(idx, true); }
+      });
+    });
   })();
 </script>
 </body>

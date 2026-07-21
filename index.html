@@ -260,7 +260,7 @@
 
   <div class="tabs">
     <div class="tablist" role="tablist" aria-label="Seções">
-      <button class="tabbtn" role="tab" aria-selected="true" aria-controls="tab-sobre" id="t-sobre">Sobre</button>
+      <button class="tabbtn" role="tab" aria-selected="true" aria-controls="tab-sobre" id="t-sobre">Início</button>
       <button class="tabbtn" role="tab" aria-selected="false" aria-controls="tab-novidades" id="t-novidades">Novidades</button>
       <button class="tabbtn" role="tab" aria-selected="false" aria-controls="tab-pesquisa" id="t-pesquisa">Pesquisa</button>
       <button class="tabbtn" role="tab" aria-selected="false" aria-controls="tab-publicacoes" id="t-publicacoes">Publicações</button>
@@ -271,8 +271,26 @@
     </div>
   </div>
 
-  <!-- SOBRE -->
+  <!-- INÍCIO -->
   <section class="tabpanel active" id="tab-sobre" role="tabpanel" aria-labelledby="t-sobre">
+    <p style="font-size: 1.1rem; margin-bottom: .6rem;"><strong>Seja bem-vindo(a).</strong> Aqui você encontra minha pesquisa, publicações, CV, dados de replicação e materiais didáticos.</p>
+
+    <div class="cards" style="margin-bottom: 2rem;">
+      <div class="card">
+        <h3>Pacote <strong>acR</strong></h3>
+        <p>Publiquei um pacote em R para análise em Ciência Política.<br><a href="https://github.com/andersonheri/acR" target="_blank" rel="noopener">Ver no GitHub ↗</a></p>
+      </div>
+      <div class="card">
+        <h3>Projeto FAPESP</h3>
+        <p>Novo projeto de pós-doc no CEM/USP sobre gestão de risco e desastres nas capitais.<br><a href="#pesquisa" data-tab="pesquisa">Ver detalhes →</a></p>
+      </div>
+      <div class="card">
+        <h3>Artigos no prelo</h3>
+        <p>Dois artigos aceitos em 2026 — RBCS e Texto para Discussão do IPEA.<br><a href="#publicacoes" data-tab="publicacoes">Ver publicações →</a></p>
+      </div>
+    </div>
+
+    <h2>Sobre</h2>
     <p>Sou cientista político, doutor pela Universidade Federal de Pernambuco (UFPE, 2025), e atualmente pesquisador de pós-doutorado no <a href="https://centrodametropole.fflch.usp.br/" target="_blank" rel="noopener">Centro de Estudos da Metrópole (CEM)</a> — FAPESP/Cepid/USP, sob supervisão da Profa. Ursula Peres (EACH/USP). Também integro o <a href="https://www.qualigov.pro.br/" target="_blank" rel="noopener">INCT sobre Qualidade de Governo e Políticas para o Desenvolvimento Sustentável (INCT-QualiGov)</a> e sou pesquisador-convidado no IPEA (Brasília), no projeto <em>Transferências Intergovernamentais e Federalismo Brasileiro</em>.</p>
     <p>Meu trabalho investiga <strong>como o Estado brasileiro responde ao imprevisto</strong> — em particular, quem recebe recursos federais de emergência, quando, e por quê. Uso essa pergunta como fio para examinar federalismo, capacidade estatal e a política das transferências intergovernamentais nos municípios, combinando desenhos quantitativos e evidências qualitativas. Também escrevo sobre políticas públicas (implementação e avaliação) e sobre replicabilidade e métodos em Ciência Política.</p>
     <p>Antes do pós-doutorado, fui professor substituto de Ciência Política na Universidade Federal do Vale do São Francisco (UNIVASF, 2022–2024) e professor colaborador no Mestrado Profissional de Sociologia em Rede Nacional (ProfSocio/UNIVASF, 2023–2025). Minha formação inclui mestrado e graduação na UFPE, um período sanduíche em Relações Internacionais na Universidade de Coimbra (2016) e treinamento em <em>Survey Data Analysis</em> na University of Essex (2019) e em <em>Research Transparency and Reproducibility</em> na UC Berkeley (2024).</p>
@@ -653,6 +671,14 @@
       const idx = tabs.findIndex(t => t.id === 't-' + initial);
       if (idx >= 0) activate(idx, false);
     }
+
+    // Links com data-tab abrem a aba correspondente
+    document.querySelectorAll('a[data-tab]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        const idx = tabs.findIndex(t => t.id === 't-' + a.dataset.tab);
+        if (idx >= 0) { e.preventDefault(); activate(idx, true); }
+      });
+    });
   })();
 </script>
 </body>
