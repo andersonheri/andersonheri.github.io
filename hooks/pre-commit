@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# ==============================================================================
+# pre-commit.sample — Hook de Validação de Governança Humano-IA
+# ==============================================================================
+
+if [[ "$OSTYPE" == "msys" || "$OSTYPE" == "cygwin" ]]; then
+    # O Git Bash exporta LC_CTYPE=C.UTF-8, que o R do Windows não aceita
+    # ("Setting LC_CTYPE=C.UTF-8 failed") e faz o matching UTF-8 do validador
+    # falhar silenciosamente (0 planos localizados no índice). Limpar o
+    # locale para o R usar o padrão do sistema (Windows).
+    unset LC_ALL LC_CTYPE LANG
+elif [[ "$LC_CTYPE" != *[Uu][Tt][Ff]-8* && "$LANG" != *[Uu][Tt][Ff]-8* ]]; then
+    # Em macOS/Linux, um shell sem LANG/LC_CTYPE exportado faz o R cair no
+    # locale "C", que não sabe converter strings acentuadas (CONCLUÍDO,
+    # Índice, etc.) para wide-char — quebrando regex e comparações do
+    # validador. Forçar um locale UTF-8 disponível no sistema.
+    if locale -a 2>/dev/null | grep -qi '^en_US\.UTF-8$'; then
+        export LC_ALL=en_US.UTF-8 LC_CTYPE=en_US.UTF-8 LANG=en_US.UTF-8
+    elif locale -a 2>/dev/null | grep -qi '^C\.UTF-8$'; then
+        export LC_ALL=C.UTF-8 LC_CTYPE=C.UTF-8 LANG=C.UTF-8
+    fi
+fi
+
+# Executar validador de consistência antes do commit
+Rscript tools/validate-governance.R
+exit $?
